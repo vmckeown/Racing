@@ -6,6 +6,7 @@ var picsToLoad = 0;
 
 function countLoadedImagesAndLaunchIfReady(){
 		picsToLoad--;
+		console.log(picsToLoad);
 		if(picsToLoad == 0) {
 			imageLoadingDoneSoStartGame();
 	}
@@ -18,13 +19,13 @@ function beginLoadingImage(imgVar, fileName) {
 
 function loadImageForTrackCode(trackCode, fileName)  {
 	trackPics[trackCode] = document.createElement("img");
-	beginLoadingImage(trackPics[trackCode],fileName);	
+	beginLoadingImage(trackPics[trackCode], fileName);	
 }
 
 function loadImages() {
 	
 		var imageList = [
-			{trackType: TRACK_ROAD, theFile: "trackRoad.png"},
+			{trackType: TRACK_ROAD,  theFile: "trackRoad.png"},
 			{trackType: TRACK_NORTH_WALL, theFile:  "wallNorth.png"},
 			{trackType: TRACK_SOUTH_WALL, theFile: "wallSouth.png"},
 			{trackType: TRACK_WEST_WALL, theFile: "wallWest.png"},
@@ -42,7 +43,7 @@ function loadImages() {
 		if(imageList[i].varName != undefined) {
 			beginLoadingImage(imageList[i].varName, imageList[i].theFile);
 		} else {
-			loadImageForTrackCode(imageList[i].trackType, imageList[i].theFile );
+			loadImageForTrackCode( imageList[i].trackType, imageList[i].theFile );
 		}
 	}
 }

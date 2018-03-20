@@ -31,7 +31,8 @@ function carClass() {
 
 	this.reset = function(whichImage, carName) {
 		this.name = carName;
-		this.carPic = whichImage;
+		this.myCarPic = whichImage;
+		this.speed = 0;
 		
 		for(var eachRow=0;eachRow<TRACK_ROWS;eachRow++) {
 			for(var eachCol=0;eachCol<TRACK_COLS;eachCol++) {
@@ -45,6 +46,7 @@ function carClass() {
 				} // end of Player Start if
 			} //end of col row for
 		} // end of row for
+		console.log("No Player Start found!")
 	} // end of carRest func
 
 	this.move = function() {

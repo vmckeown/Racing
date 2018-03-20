@@ -17,6 +17,21 @@ function imageLoadingDoneSoStartGame() {
 	setInterval(updateAll, 1000/framesPerSecond);
 	
 	setupInput();
+	
+	loadLevel(levelOne);
+
+}
+
+function nextLevel() {
+	levelNow++;
+	if(levelNow >= levelList.length) {
+		levelNow = 0;
+	}
+	loadLevel(levelList[levelNow]);
+}
+
+function loadLevel(whichLevel) {	
+	trackGrid = whichLevel.slice();
 	redCar.reset(carPic, "Red Car");
 	greenCar.reset(greenCarPic, "Green Car");
 }
@@ -29,11 +44,12 @@ function updateAll() {
 function moveAll() {
 	redCar.move();
 	greenCar.move();
-	//carTrackHandling(redCar);
-	//carTrackHandling(greenCar);
+	carTrackHandling(redCar);
+	carTrackHandling(greenCar);
 }
 
 function drawAll() {
+	
 	drawTracks();
 	redCar.draw();
 	greenCar.draw();

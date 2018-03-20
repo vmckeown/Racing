@@ -49,8 +49,6 @@ function keySet(keyEvent, whichCar, setTo) {
 function keyPressed(evt) {
 	keySet(evt, redCar, true);
 	keySet(evt, greenCar, true);
-	
-	evt.preventDefault();
 }
 
 function keyReleased(evt) {
